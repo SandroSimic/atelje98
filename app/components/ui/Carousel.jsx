@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 export default function Carousel({ images, currentImageIndex, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(currentImageIndex);
 
-
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
@@ -57,8 +56,12 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
               transition={{ duration: 0.5 }}
             >
               <Image
-                src={images[(currentIndex - 1 + images.length) % images.length].src}
-                alt={images[(currentIndex - 1 + images.length) % images.length].alt}
+                src={
+                  images[(currentIndex - 1 + images.length) % images.length].src
+                }
+                alt={
+                  images[(currentIndex - 1 + images.length) % images.length].alt
+                }
                 width={300}
                 height={300}
                 className="rounded-lg object-cover"
@@ -67,7 +70,7 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
 
             {/* Main Image */}
             <motion.div
-              className="p-1 lg:p-0 w-full lg:w-6/12 flex items-center flex-col gap-5"
+              className="p-1 lg:p-0 w-full  lg:w-2/6 flex items-center flex-col gap-5"
               key={currentIndex}
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -77,10 +80,10 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
               <Image
                 src={images[currentIndex].src}
                 alt={images[currentIndex].alt}
-                width={700}
+                width={800}
                 height={800}
                 objectFit="cover"
-                className="rounded-lg"
+                className="rounded-lg max-h-[800px]"
               />
               <div className="flex flex-col text-center text-white px-4 gap-1 lg:gap-2">
                 <h3 className="text-md lg:text-3xl uppercase font-sans font-bold">
