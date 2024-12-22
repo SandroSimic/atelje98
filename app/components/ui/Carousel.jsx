@@ -30,7 +30,7 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-white text-2xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex justify-center items-center"
+          className="absolute top-5 right-5 z-50 text-white text-2xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex justify-center items-center"
         >
           &#x2715;
         </button>

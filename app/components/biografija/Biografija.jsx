@@ -2,14 +2,14 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import mladenImage from "./../../public/images/mladenAbout.jpg";
-import phone from "./../../public/images/phone.png";
-import insta from "./../../public/images/insta.png";
-import mail from "./../../public/images/mail.png";
-import Container from "../components/ui/Container";
+import mladenImage from "../../../public/images/mladenAbout.jpg";
+import phone from "../../../public/images/phone.png";
+import insta from "../../../public/images/insta.png";
+import mail from "../../../public/images/mail.png";
+import Container from "../ui/Container";
 import Link from "next/link";
 
-function Page() {
+function Biografija() {
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -36,17 +36,16 @@ function Page() {
       variants={containerVariants}
     >
       <Container
-        className={"flex flex-col xl:flex-row m-auto h-full gap-5 xl:gap-0 px-0"}
+        className={
+          "flex flex-col xl:flex-row m-auto h-full gap-5 xl:gap-0 px-0"
+        }
       >
-        <motion.div
-          className="flex items-center justify-center w-full"
-          variants={itemVariants}
-        >
+        <motion.div className="flex items-center justify-center lg:items-start lg:justify-start w-full" variants={itemVariants}>
           <Image
             alt="Mladen Micic Photo"
             src={mladenImage}
             width={700}
-            objectFit="cover"
+            objectFit="cover object-left"
           />
         </motion.div>
         <motion.div
@@ -81,7 +80,10 @@ function Page() {
               className="flex flex-col items-center gap-1 justify-center"
               variants={itemVariants}
             >
-              <Link href="https://www.instagram.com/mladen.micic.1998/" className="flex flex-col items-center gap-1">
+              <Link
+                href="https://www.instagram.com/mladen.micic.1998/"
+                className="flex flex-col items-center gap-1"
+              >
                 <Image
                   alt="Instagram"
                   src={insta}
@@ -136,4 +138,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Biografija;

@@ -8,7 +8,8 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: "O meni", href: "o-meni" },
+    { name: "Biografija", href: "" },
+    { name: "Galerija", href: "galerija" },
     { name: "Izložbe", href: "izlozbe" },
     { name: "Atelje 98", href: "atelje98" },
   ];
@@ -19,9 +20,9 @@ function Navbar() {
         <div className=" py-8 flex justify-between items-center relative z-10">
           {/* Logo */}
           <div className="text-2xl font-bold text-black">
-            <Link href="/">
+            <div>
               <h1 className="font-thin ">Mladen Mićić</h1>
-            </Link>
+            </div>
           </div>
 
           {/* Hamburger Menu */}

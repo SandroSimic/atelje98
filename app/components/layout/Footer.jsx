@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Footer = () => {
   const links = [
-    { name: "O meni", href: "o-meni" },
+    { name: "Biografija", href: "o-meni" },
     { name: "Izložbe", href: "izlozbe" },
     { name: "Atelje 98", href: "atelje98" },
   ];
