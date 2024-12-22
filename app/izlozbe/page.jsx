@@ -55,6 +55,22 @@ function Izlozbe() {
         variants={containerVariants}
       >
         <div className="flex flex-col gap-10">
+        {soloExhibitionsData.map((data, index) => (
+            <motion.div
+              className="flex flex-col gap-5"
+              key={index}
+              variants={itemVariants}
+            >
+              <h2 className="text-base md:text-xl font-semibold uppercase">{data.title}</h2>
+              <div className="flex flex-col gap-2">
+                {data.exhibitions.map((exib, i) => (
+                  <p className="text-base md:text-lg" key={i}>
+                    {exib}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+          ))}
           {exhibitionsData.map((exhibition, index) => (
             <motion.div
               className="flex flex-col gap-5"
@@ -89,22 +105,7 @@ function Izlozbe() {
               </div>
             </motion.div>
           ))}
-          {soloExhibitionsData.map((data, index) => (
-            <motion.div
-              className="flex flex-col gap-5"
-              key={index}
-              variants={itemVariants}
-            >
-              <h2 className="text-base md:text-xl font-semibold uppercase">{data.title}</h2>
-              <div className="flex flex-col gap-2">
-                {data.exhibitions.map((exib, i) => (
-                  <p className="text-base md:text-lg" key={i}>
-                    {exib}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+
         </div>
       </motion.div>
     </Container>

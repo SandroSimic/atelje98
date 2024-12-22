@@ -10,14 +10,16 @@ const Footer = () => {
   const links = [
     { name: "O meni", href: "o-meni" },
     { name: "Izložbe", href: "izlozbe" },
-    { name: "Atelje98", href: "atelje98" },
+    { name: "Atelje 98", href: "atelje98" },
   ];
   return (
     <footer className="p-14 px-0">
       <div className="flex flex-col gap-8 items-center justify-center">
-        <Link href="/">
-          <Image alt="LOGO " src={logo} />
-        </Link>
+      <div className="text-2xl font-bold text-black">
+            <Link href="/">
+              <h1 className="font-thin ">Mladen Mićić</h1>
+            </Link>
+          </div>
 
         <div className="flex  md:flex-row md:space-x-8 items-center p-4 md:p-0 gap-10 md:gap-2 ">
           {links.map((item, index) => (

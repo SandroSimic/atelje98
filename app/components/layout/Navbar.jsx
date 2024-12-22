@@ -10,7 +10,7 @@ function Navbar() {
   const links = [
     { name: "O meni", href: "o-meni" },
     { name: "Izložbe", href: "izlozbe" },
-    { name: "Atelje98", href: "atelje98" },
+    { name: "Atelje 98", href: "atelje98" },
   ];
 
   return (
@@ -20,12 +20,7 @@ function Navbar() {
           {/* Logo */}
           <div className="text-2xl font-bold text-black">
             <Link href="/">
-              <Image
-                src={require("/public/images/logo.png")}
-                alt="Mladen Micic"
-                width={150}
-                height={50}
-              />
+              <h1 className="font-thin ">Mladen Mićić</h1>
             </Link>
           </div>
 

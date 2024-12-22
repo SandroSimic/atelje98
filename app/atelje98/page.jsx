@@ -23,7 +23,7 @@ const techniques = [
     image: brush,
   },
   {
-    name: "uglen na papiru",
+    name: "ugljen na papiru",
     image: ugljen,
   },
   {
@@ -64,10 +64,10 @@ function Page() {
               className="uppercase text-xl md:text-2xl lg:text-4xl font-bold"
               variants={itemVariants}
             >
-              atelje98
+              atelje 98
             </motion.h1>
             <motion.p
-              className="text-base text-center lg:text-left leading-10 font-medium"
+              className="text-base text-left lg:text-left leading-10 font-medium"
               variants={itemVariants}
             >
               Atelje 98 je umjetnički prostor u Bijeljini, koji je namjenjen
@@ -76,7 +76,7 @@ function Page() {
               ljubav prema umjetnosti. U ateljeu možete naučiti sve slikarske i
               crtačke tehnike: Ulje na platnu, akril na platnu, grafitna olovka
               na papiru, ugljen na papiru i mnoge druge. Osnivač i predavač je
-              Mladen Mićić. Visokoobrazovani stručnjak i višestruko nagrađivani,
+              Mladen Mićić, visokoobrazovani stručnjak i višestruko nagrađivani,
               doktorand na Fakultetu likovnih umjetnosti u Beogradu. Pored
               časova crtanja i slikanja, polaznici će u ateljeu imati priliku da
               vide predavača u stvaralačkom procesu. Tu je takođe i stalna
@@ -85,7 +85,7 @@ function Page() {
               pravom mjestu.
             </motion.p>
             <motion.div
-              className="flex gap-10 flex-col md:flex-row md:gap-0 w-full justify-between"
+              className="flex gap-10 flex-col my-10 md:flex-row md:gap-0 w-full justify-between"
               variants={itemVariants}
             >
               <div className="flex flex-col items-center gap-1 justify-center">
@@ -154,14 +154,14 @@ function Page() {
         </motion.div>
       </Container>
       <div className="bg-[#222222] my-20">
-        <Container className={"flex flex-col gap-5 py-10"}>
+        <Container className={"flex flex-col gap-5 py-5 lg:py-10 lg:gap-10"}>
           <motion.h1
-            className="text-white uppercase text-2xl md:text-3xl lg:text-4xl"
+            className="text-white uppercase text-center lg:text-left text-2xl md:text-3xl lg:text-4xl"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            tehinke koje ce te nauciti
+            tehinke koje ćete naučiti
           </motion.h1>
           <motion.div
             className="flex flex-wrap lg:flex-nowrap justify-between gap-10"

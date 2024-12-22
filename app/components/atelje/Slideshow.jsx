@@ -29,7 +29,7 @@ function Slideshow() {
   return (
     <>
       <div
-        className="mt-10 relative h-[300px] md:h-[500px] w-full lg:h-auto lg:overflow-hidden"
+        className="relative h-[300px] md:h-[500px] w-full lg:h-auto lg:overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

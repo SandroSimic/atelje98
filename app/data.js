@@ -1,15 +1,15 @@
 export const images = [
   {
-    src: "/images/odsutnost1.jpg",
-    alt: "Odsutnost 1",
-    name: "Odsutnost 1",
-    dimensions: "61x98cm",
-    technique: "Grafitna olovka na papiru",
+    src: "/images/bezNaziva10.jpg",
+    alt: "Bez Naziva",
+    name: "Bez Naziva",
+    dimensions: "29x40cm",
+    technique: "Grafit na papiru",
     grid: "col-span-2  md:col-span-1 ",
     width: "w-full",
   },
   {
-    src: "/images/bezNaziva1.jpg",
+    src: "/images/bezNaziva6.jpg",
     alt: "Slika je bez naziva",
     dimensions: "15x11cm",
     technique: "Grafit na papiru",
@@ -18,6 +18,7 @@ export const images = [
   },
   {
     src: "/images/bezNaziva2.jpg",
+    name: "Bez Naziva",
     alt: "Slika je bez naziva",
     dimensions: "30x30cm",
     technique: "Grafit na papiru",
@@ -44,7 +45,7 @@ export const images = [
     alt: "Oblaci",
     dimensions: "16x16cm",
     technique: "Grafit na papiru",
-    grid: "col-span-2 row-span-1 md:col-span-1 md:row-span-3",
+    grid: "col-span-2 row-span-1 md:col-span-1 md:row-span-2 ",
   },
   {
     src: "/images/bezNaziva3.jpg",
@@ -68,7 +69,7 @@ export const images = [
     grid: "col-span-2 row-span-1 md:col-span-1 md:row-span-2",
   },
   {
-    src: "/images/bezNaziva6.jpg",
+    src: "/images/mementoMori.jpg",
     alt: "Slika je bez naziva",
     dimensions: "25x25cm",
     technique: "Grafit na papiru",
@@ -80,7 +81,7 @@ export const images = [
     name: "Odsutnost 4",
     dimensions: "33x35cm",
     technique: "Grafitna olovka na papiru",
-    grid: "col-span-2 row-span-1 md:col-span-1 md:row-span-1",
+    grid: "col-span-2 row-span-1 md:col-span-1 md:row-span-1 ",
   },
   {
     src: "/images/opiranje3.jpg",

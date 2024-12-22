@@ -48,7 +48,7 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
           {/* Images */}
           <div className="flex justify-between w-5/6 items-center">
             {/* Left Image */}
-            <motion.div
+            {/* <motion.div
               className="hidden lg:block"
               initial={{ x: -300, opacity: 0 }}
               animate={{ x: 0, opacity: 0.5 }}
@@ -66,11 +66,11 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
                 height={300}
                 className="rounded-lg object-cover"
               />
-            </motion.div>
+            </motion.div> */}
 
             {/* Main Image */}
             <motion.div
-              className="p-1 lg:p-0 w-full  lg:w-2/6 flex items-center flex-col gap-5"
+              className="p-1 lg:p-0 w-full  lg:w-full flex items-center flex-col gap-5"
               key={currentIndex}
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -80,26 +80,26 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
               <Image
                 src={images[currentIndex].src}
                 alt={images[currentIndex].alt}
-                width={800}
-                height={800}
+                width={1000}
+                height={700}
                 objectFit="cover"
-                className="rounded-lg max-h-[800px]"
+                className="rounded-lg max-h-[900px]"
               />
-              <div className="flex flex-col text-center text-white px-4 gap-1 lg:gap-2">
-                <h3 className="text-md lg:text-3xl uppercase font-sans font-bold">
-                  {images[currentIndex].name}
+              <div className="flex  text-center text-white px-4 lg:gap-2">
+                <h3 className="text-md lg:text-lg   ">
+                  {images[currentIndex].name},
                 </h3>
-                <p className="text-xs lg:text-lg uppercase font-sans">
-                  {images[currentIndex].technique}
+                <p className="text-xs lg:text-lg  ">
+                  {images[currentIndex].technique},
                 </p>
-                <p className="text-xs lg:text-lg uppercase font-sans">
+                <p className="text-xs lg:text-lg font-sans ">
                   {images[currentIndex].dimensions}
                 </p>
               </div>
             </motion.div>
 
             {/* Right Image */}
-            <motion.div
+            {/* <motion.div
               className="hidden lg:block"
               initial={{ x: 300, opacity: 0 }}
               animate={{ x: 0, opacity: 0.5 }}
@@ -113,7 +113,7 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
                 height={300}
                 className="rounded-lg object-cover"
               />
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Right Arrow */}

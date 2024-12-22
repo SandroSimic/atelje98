@@ -36,7 +36,7 @@ function Page() {
       variants={containerVariants}
     >
       <Container
-        className={"flex flex-col xl:flex-row m-auto h-full gap-5 xl:gap-0"}
+        className={"flex flex-col xl:flex-row m-auto h-full gap-5 xl:gap-0 px-0"}
       >
         <motion.div
           className="flex items-center justify-center w-full"
@@ -50,7 +50,7 @@ function Page() {
           />
         </motion.div>
         <motion.div
-          className="w-full xl:w-5/6 flex flex-col items-center justify-center xl:justify-between xl:items-baseline gap-10"
+          className="w-full xl:w-5/6 flex flex-col items-center justify-center xl:justify-between xl:items-baseline gap-5"
           variants={containerVariants}
         >
           <motion.h1
@@ -60,7 +60,7 @@ function Page() {
             o meni
           </motion.h1>
           <motion.p
-            className="xl:text-lg leading-8 xl:leading-9 text-md text-center xl:text-left"
+            className="xl:text-lg leading-8 xl:leading-9 text-md text-left"
             variants={itemVariants}
           >
             Mladen Mićić, rođen 25.4.1998. godine u Bijeljini. OŠ „Jovan Dučić”
@@ -74,7 +74,7 @@ function Page() {
             akademske studije na Fakultetu likovnih umetnosti u Beogradu.
           </motion.p>
           <motion.div
-            className="flex flex-col xl:flex-row gap-5 items-center justify-center"
+            className="flex flex-col xl:flex-row gap-5 items-center w-full justify-between my-10"
             variants={containerVariants}
           >
             <motion.div

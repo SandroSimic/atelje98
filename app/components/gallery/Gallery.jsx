@@ -32,7 +32,7 @@ export default function Gallery() {
   return (
     <>
       <motion.div
-        className=" py-10 grid grid-cols-2 grid-rows-12 gap-5"
+        className=" py-10 grid grid-cols-2 align-top content-start  grid-rows-12 gap-5"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -40,30 +40,27 @@ export default function Gallery() {
         {images.map((image, index) => (
           <motion.div
             key={index}
-            className={`relative ${image.height} group w-full ${image.grid} overflow-hidden`}
+            className={`relative  ${image.height} group w-full ${image.grid} overflow-hidden cursor-pointer`}
             onClick={() => handleImageClick(index)}
-            variants={itemVariants} // Apply animation to each item
+            variants={itemVariants}
           >
             <Image
               src={image.src}
               alt={image.alt}
-              className="rounded-xl group-hover:scale-110 transition-transform duration-300 ease-in-out"
               layout="fill"
+              objectFit="cover"
+              className="rounded-xl group-hover:scale-110 transition-transform duration-300 ease-in-out"
               loading="lazy"
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
               quality={100}
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:z-10 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <div className="flex flex-col text-center text-white px-4 gap-5">
-                <h3 className="text-3xl uppercase font-sans font-bold">
-                  {image.name}
-                </h3>
-                <p className="text-md uppercase font-sans">{image.technique}</p>
-                <p className="text-md uppercase font-sans">
-                  {image.dimensions}
-                </p>
-              </div>
-            </div>
+            {/* <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:z-10 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"> */}
+              {/* <div className="flex items-center text-center text-white px-4 gap-0">
+                <h3 className="text-md   ">{image.name},</h3>
+                <p className="text-md  ">{image.technique},</p>
+                <p className="text-md  ">{image.dimensions},</p>
+              </div> */}
+                {/* <h1 className="text-white">IKONICA</h1> */}
+            {/* </div> */}
           </motion.div>
         ))}
       </motion.div>
