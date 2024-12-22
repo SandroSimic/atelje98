@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { images } from "../../data";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Carousel from "../ui/Carousel";
 
 export default function Gallery() {
@@ -13,22 +14,40 @@ export default function Gallery() {
     setIsCarouselOpen(true);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <>
-      <div
-        className="px-2 md:px-10 py-10 grid grid-cols-2 grid-rows-12 gap-5"
-
+      <motion.div
+        className=" py-10 grid grid-cols-2 grid-rows-12 gap-5"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
         {images.map((image, index) => (
-          <div
+          <motion.div
             key={index}
-            className={`relative ${image.height} group w-full ${image.grid}`}
+            className={`relative ${image.height} group w-full ${image.grid} overflow-hidden`}
             onClick={() => handleImageClick(index)}
+            variants={itemVariants} // Apply animation to each item
           >
             <Image
               src={image.src}
               alt={image.alt}
-              className="rounded-xl"
+              className="rounded-xl group-hover:scale-110 transition-transform duration-300 ease-in-out"
               layout="fill"
               loading="lazy"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
@@ -45,9 +64,9 @@ export default function Gallery() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
       {isCarouselOpen && (
         <Carousel
           images={images}

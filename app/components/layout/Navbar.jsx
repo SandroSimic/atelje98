@@ -7,10 +7,16 @@ import Container from "../ui/Container";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const links = [
+    { name: "O meni", href: "o-meni" },
+    { name: "Izložbe", href: "izlozbe" },
+    { name: "Atelje98", href: "atelje98" },
+  ];
+
   return (
     <nav className="bg-white shadow-md">
       <Container>
-        <div className="px-3 py-8 md:px-10 flex justify-between items-center relative z-10">
+        <div className=" py-8 flex justify-between items-center relative z-10">
           {/* Logo */}
           <div className="text-2xl font-bold text-black">
             <Link href="/">
@@ -47,18 +53,18 @@ function Navbar() {
 
           {/* Navigation Links */}
           <div
-            className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent overflow-hidden md:overflow-visible transition-[max-height] md:transition-none duration-500 ease-in-out ${
-              isOpen ? "max-h-[1000px]" : "max-h-0 md:max-h-none"
+            className={`absolute md:static top-24 left-0 w-full md:w-auto bg-white md:bg-transparent overflow-hidden md:overflow-visible transition-[max-height] md:transition-none duration-500 ease-in-out ${
+              isOpen ? "max-h-[1000px] w-full" : "max-h-0 md:max-h-none"
             }`}
           >
-            <div className="flex flex-col md:flex-row md:space-x-8 items-center p-4 md:p-0 gap-10 md:gap-2">
-              {["O meni", "Izložbe", "Atelje98"].map((item, index) => (
+            <div className="flex    flex-col  md:flex-row md:space-x-8 items-center p-4 md:p-0 gap-10 md:gap-2 ">
+              {links.map((item, index) => (
                 <Link
                   key={index}
-                  href={`/${item.toLowerCase().replace(" ", "-")}`}
+                  href={`/${item.href}`}
                   className="group relative text-black text-lg py-2 md:py-0 transition-colors duration-300"
                 >
-                  {item}
+                  {item.name}
                   <span className="absolute bottom-1 md:-bottom-1 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}

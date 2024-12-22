@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         className={`${playfairDisplay.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        {children}
+        <main className="bg-background-light">{children}</main>
         <Footer />
       </body>
     </html>

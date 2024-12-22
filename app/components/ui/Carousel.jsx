@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Container from "./Container";
+import { motion } from "framer-motion";
 
 export default function Carousel({ images, currentImageIndex, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(currentImageIndex);
+
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -15,10 +17,6 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
-
-  // Calculate indices for side images
-  const leftIndex = (currentIndex - 1 + images.length) % images.length;
-  const rightIndex = (currentIndex + 1) % images.length;
 
   useEffect(() => {
     document.body.classList.add("overflow-hidden");
@@ -31,7 +29,6 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
     <Container>
       <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
         {/* Close Button */}
-
         <button
           onClick={onClose}
           className="absolute top-5 right-5 text-white text-2xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex justify-center items-center"
@@ -50,30 +47,42 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
           </button>
 
           {/* Images */}
-          <div className="flex justify-between  w-5/6 items-center ">
+          <div className="flex justify-between w-5/6 items-center">
             {/* Left Image */}
-            <div className="hidden opacity-50 lg:block">
+            <motion.div
+              className="hidden lg:block"
+              initial={{ x: -300, opacity: 0 }}
+              animate={{ x: 0, opacity: 0.5 }}
+              exit={{ x: -300, opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Image
-                src={images[leftIndex].src}
-                alt={images[leftIndex].alt}
+                src={images[(currentIndex - 1 + images.length) % images.length].src}
+                alt={images[(currentIndex - 1 + images.length) % images.length].alt}
                 width={300}
                 height={300}
                 className="rounded-lg object-cover"
-                onClick={handlePrev}
               />
-            </div>
+            </motion.div>
 
             {/* Main Image */}
-            <div className="p-1 lg:p-0  w-full  lg:w-6/12 flex  items-center  flex-col gap-5">
+            <motion.div
+              className="p-1 lg:p-0 w-full lg:w-6/12 flex items-center flex-col gap-5"
+              key={currentIndex}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -100, opacity: 0 }}
+              transition={{ duration: 0.1 }}
+            >
               <Image
                 src={images[currentIndex].src}
                 alt={images[currentIndex].alt}
                 width={700}
                 height={800}
                 objectFit="cover"
-                className="rounded-lg "
+                className="rounded-lg"
               />
-              <div className="flex flex-col text-center text-white px-4 gap-1 lg:gap-2 ">
+              <div className="flex flex-col text-center text-white px-4 gap-1 lg:gap-2">
                 <h3 className="text-md lg:text-3xl uppercase font-sans font-bold">
                   {images[currentIndex].name}
                 </h3>
@@ -84,19 +93,24 @@ export default function Carousel({ images, currentImageIndex, onClose }) {
                   {images[currentIndex].dimensions}
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Image */}
-            <div className="hidden opacity-50 lg:block">
+            <motion.div
+              className="hidden lg:block"
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 0.5 }}
+              exit={{ x: 300, opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Image
-                src={images[rightIndex].src}
-                alt={images[rightIndex].alt}
+                src={images[(currentIndex + 1) % images.length].src}
+                alt={images[(currentIndex + 1) % images.length].alt}
                 width={300}
                 height={300}
                 className="rounded-lg object-cover"
-                onClick={handleNext}
               />
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Arrow */}
